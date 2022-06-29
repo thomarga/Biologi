@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        release {
+            storePassword "oWgQ6yOxMdByaELlT7jgt3lvoUvVEmq3vGbdaXV1BNIDQGeoJI"
+            keyAlias 'key-alias-biologi'
+            keyPassword 'oWgQ6yOxMdByaELlT7jgt3lvoUvVEmq3vGbdaXV1BNIDQGeoJI'
+            storeFile file('release-biologi.jks')
+        }
+    }
+}
