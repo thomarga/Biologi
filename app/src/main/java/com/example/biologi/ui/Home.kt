@@ -22,13 +22,13 @@ class Home : AppCompatActivity() {
         }
 
         //direct ke browser dengan url yang sudah di inisiasi
-        latihanButton.setOnClickListener {
+        evaluasiPembelajaranButton.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://quizizz.com/admin/quiz/62904d81b8625f001d40de24"))
             startActivity(browserIntent)
         }
 
-        kompetensiMateriButton.setOnClickListener {
+        kompetensiDasarButton.setOnClickListener {
             showSingleButtonWarningDialog(
                 title = "Kompetensi",
                 content = "KD 3.6 Mengelompokkan protista berdasarkan ciri-ciri umum kelas dan " +
@@ -37,7 +37,7 @@ class Home : AppCompatActivity() {
             )
         }
 
-        aboutButton.setOnClickListener {
+        profilPengembangButton.setOnClickListener {
             showSingleButtonWarningDialog(
                 title = "Tentang",
                 content = "Aplikasi ini merupakan media pembelajaran berbasis android yang " +

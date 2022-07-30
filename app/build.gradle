@@ -29,7 +29,6 @@ android {
             shrinkResources true
             crunchPngs true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -66,6 +65,7 @@ dependencies {
     kapt 'androidx.lifecycle:lifecycle-compiler:2.4.1'
 
     //trhidparty
-    implementation 'com.github.mmoamenn:LuckyWheel_Android:0.3.0'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation project(":luckywheel")
+
 }

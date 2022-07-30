@@ -16,4 +16,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Biologi"
-include ':app'
+include ':app',':luckywheel'
+project(':luckywheel').projectDir = new File(rootDir, 'libs/LuckyWheel_Android/luckywheel/')
