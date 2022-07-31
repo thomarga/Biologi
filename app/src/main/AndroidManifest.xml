@@ -13,13 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".ui.Home"
+            android:exported="false" />
+        <activity
+            android:name=".ui.PetaKonsep"
+            android:exported="false" />
+        <activity
+            android:name=".ui.About"
+            android:exported="false" />
+        <activity
             android:name=".ui.Spin"
             android:exported="false" />
         <activity
             android:name=".ui.PdfView"
             android:exported="false" />
         <activity
-            android:name=".ui.Home"
+            android:name=".ui.KataPengantar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -13,6 +13,7 @@ import com.github.barteksc.pdfviewer.listener.OnPageErrorListener
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle
 import com.shockwave.pdfium.PdfDocument
 import kotlinx.android.synthetic.main.pdf_view.*
+import kotlinx.android.synthetic.main.toolbar.view.*
 
 
 class PdfView : AppCompatActivity(),OnPageChangeListener,OnLoadCompleteListener,OnPageErrorListener {
@@ -22,9 +23,11 @@ class PdfView : AppCompatActivity(),OnPageChangeListener,OnLoadCompleteListener,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pdf_view)
 
+
         val intent = intent
         Log.e("materi",intent.getStringExtra("protista").toString())
-        pdfView.fromAsset(intent.getStringExtra("protista").toString())
+        includePdf.textViewToolbar.text=intent.getStringExtra("protista").toString()
+        pdfView.fromAsset("${intent.getStringExtra("protista")}.pdf")
             .defaultPage(pageNumber)
             .onPageChange(this)
             .enableAnnotationRendering(true)
@@ -38,7 +41,7 @@ class PdfView : AppCompatActivity(),OnPageChangeListener,OnLoadCompleteListener,
             spin()
         }
 
-        when(intent.getStringExtra("protista").toString()=="protista_materi.pdf"){
+        when(intent.getStringExtra("protista").toString()=="protista_materi"){
             true->{
                 fungiBtn.visibility= VISIBLE
                 ganggangBtn.visibility= VISIBLE

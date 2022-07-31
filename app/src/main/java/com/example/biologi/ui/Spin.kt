@@ -58,7 +58,7 @@ class Spin : AppCompatActivity() {
         lwv.setLuckyWheelReachTheTarget {
             Toast.makeText(this, "Target Reached ${myList?.get(getValue-1)}", Toast.LENGTH_LONG).show()
             val intent = Intent(this, PdfView::class.java)
-            intent.putExtra("protista", "${myList?.get(getValue-1)}.pdf")
+            intent.putExtra("protista", "${myList?.get(getValue-1)}")
             startActivity(intent)
         }
     }
