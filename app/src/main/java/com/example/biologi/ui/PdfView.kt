@@ -16,17 +16,18 @@ import kotlinx.android.synthetic.main.pdf_view.*
 import kotlinx.android.synthetic.main.toolbar.view.*
 
 
-class PdfView : AppCompatActivity(),OnPageChangeListener,OnLoadCompleteListener,OnPageErrorListener {
-    private var pageNumber:Int=0
-    private var pdfFileName:String =""
+class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListener,
+    OnPageErrorListener {
+    private var pageNumber: Int = 0
+    private var pdfFileName: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pdf_view)
 
 
         val intent = intent
-        Log.e("materi",intent.getStringExtra("protista").toString())
-        includePdf.textViewToolbar.text=intent.getStringExtra("protista").toString()
+        Log.e("materi", intent.getStringExtra("protista").toString())
+        includePdf.textViewToolbar.text = intent.getStringExtra("protista").toString()
         pdfView.fromAsset("${intent.getStringExtra("protista")}.pdf")
             .defaultPage(pageNumber)
             .onPageChange(this)
@@ -41,16 +42,16 @@ class PdfView : AppCompatActivity(),OnPageChangeListener,OnLoadCompleteListener,
             spin()
         }
 
-        when(intent.getStringExtra("protista").toString()=="protista_materi"){
-            true->{
-                fungiBtn.visibility= VISIBLE
-                ganggangBtn.visibility= VISIBLE
-                protozoaBtn.visibility= VISIBLE
+        when (intent.getStringExtra("protista").toString() == "protista_materi") {
+            true -> {
+                fungiBtn.visibility = VISIBLE
+                ganggangBtn.visibility = VISIBLE
+                protozoaBtn.visibility = VISIBLE
             }
-            false->{
-                fungiBtn.visibility= INVISIBLE
-                ganggangBtn.visibility= INVISIBLE
-                protozoaBtn.visibility= INVISIBLE
+            false -> {
+                fungiBtn.visibility = INVISIBLE
+                ganggangBtn.visibility = INVISIBLE
+                protozoaBtn.visibility = INVISIBLE
             }
         }
 
@@ -68,9 +69,9 @@ class PdfView : AppCompatActivity(),OnPageChangeListener,OnLoadCompleteListener,
     }
 
     override fun onPageChanged(page: Int, pageCount: Int) {
-        pageNumber=page
+        pageNumber = page
         title = String.format("%s %s / %s", pdfFileName, page + 1, pageCount)
-        Log.e("tes",pageNumber.toString())
+        Log.e("tes", pageNumber.toString())
 //        when (pageNumber+1==pageCount){
 //            true->button2.visibility = VISIBLE
 //            else -> {}
@@ -85,32 +86,34 @@ class PdfView : AppCompatActivity(),OnPageChangeListener,OnLoadCompleteListener,
 
     }
 
-    private fun spin (){
-        val materi = arrayListOf("fungi","ganggang","protozoa")
-        val intent= Intent(this, Spin::class.java)
-        intent.putExtra("materi",materi)
+    private fun spin() {
+        val materi = arrayListOf("fungi", "ganggang", "protozoa")
+        val intent = Intent(this, Spin::class.java)
+        intent.putExtra("materi", materi)
         startActivity(intent)
     }
 
-    private fun fungi(){
-        val materi = arrayListOf("myxomycota","oomycota","acrasiomycota")
-        val intent= Intent(this, Spin::class.java)
-        intent.putExtra("materi",materi)
+    private fun fungi() {
+        val materi = arrayListOf("myxomycota", "oomycota", "acrasiomycota")
+        val intent = Intent(this, Spin::class.java)
+        intent.putExtra("materi", materi)
         startActivity(intent)
     }
 
-    private fun ganggang(){
-        val materi = arrayListOf("rhodophyta","phaeophyta","chrysophyta","chlorophyta",
-            "bacillariophyta","euglenophyta")
-        val intent= Intent(this, Spin::class.java)
-        intent.putExtra("materi",materi)
+    private fun ganggang() {
+        val materi = arrayListOf(
+            "rhodophyta", "phaeophyta", "chrysophyta", "chlorophyta",
+            "bacillariophyta", "euglenophyta"
+        )
+        val intent = Intent(this, Spin::class.java)
+        intent.putExtra("materi", materi)
         startActivity(intent)
     }
 
-    private fun protozoa(){
-        val materi = arrayListOf("rizopoda","flagellata","ciliata","sporozoa")
-        val intent= Intent(this, Spin::class.java)
-        intent.putExtra("materi",materi)
+    private fun protozoa() {
+        val materi = arrayListOf("rizopoda", "flagellata", "ciliata", "sporozoa")
+        val intent = Intent(this, Spin::class.java)
+        intent.putExtra("materi", materi)
         startActivity(intent)
     }
 }

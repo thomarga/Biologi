@@ -1,8 +1,8 @@
 package com.example.biologi.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.biologi.R
 import kotlinx.android.synthetic.main.activity_kata_pengantar.*
 
@@ -12,7 +12,7 @@ class KataPengantar : AppCompatActivity() {
         setContentView(R.layout.activity_kata_pengantar)
 
         button3.setOnClickListener {
-            startActivity(Intent(this,Home::class.java))
+            startActivity(Intent(this, Home::class.java))
         }
     }
 }

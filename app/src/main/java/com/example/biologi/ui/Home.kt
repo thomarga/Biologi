@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.biologi.R
 import com.example.biologi.showSingleButtonWarningDialog
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.toolbar.view.*
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,15 +17,17 @@ class Home : AppCompatActivity() {
         //send data protista yang berisi string protista_materi.pdf ke activity lain sekaligus
         // pindah activity
         materiButton.setOnClickListener {
-            val intent= Intent(this, PdfView::class.java)
-            intent.putExtra("protista","protista_materi")
+            val intent = Intent(this, PdfView::class.java)
+            intent.putExtra("protista", "protista_materi")
             startActivity(intent)
         }
 
         //direct ke browser dengan url yang sudah di inisiasi
         evaluasiPembelajaranButton.setOnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://quizizz.com/admin/quiz/62904d81b8625f001d40de24"))
+            val browserIntent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://quizizz.com/admin/quiz/62904d81b8625f001d40de24")
+            )
             startActivity(browserIntent)
         }
 
@@ -40,12 +41,12 @@ class Home : AppCompatActivity() {
         }
 
         profilPengembangButton.setOnClickListener {
-            startActivity(Intent(this,About::class.java))
+            startActivity(Intent(this, About::class.java))
         }
 
         petunjukPenggunaanButton.setOnClickListener {
             showSingleButtonWarningDialog(
-                title= " Petunjuk Penggunaan",
+                title = " Petunjuk Penggunaan",
                 content = "Guna mempermudan teman-teman dalam mempelajari E-Modul Protista ini dan penggunaanya secara maksimal, alangkah baiknya teman teman memahami petunjuk penggunaan sebagai E-Modul ini terlebih dahulu \n" +
                         "•\tPengguna e-modul dapat di akses secara mandiri dan dapat dimulai dari menu apa saja\n" +
                         "•\tBacalah dengan teliti dan seksama pada materi yang akan dipelajari \n" +
@@ -60,7 +61,7 @@ class Home : AppCompatActivity() {
 
         daftarPustakaButton.setOnClickListener {
             showSingleButtonWarningDialog(
-                title= " Daftar Pustaka",
+                title = " Daftar Pustaka",
                 content = "•\tSiti, N., Devi, R., Rofida U. 2020. Biologi untuk SMA/MA Kelas X Peminatan Matematika dan Ilmu-Ilmu Alam. Klaten: Intan Pariwara.\n" +
                         "•\tIrnaningtyas. 2013. Biologi untuk SMA/MA Kelas X Peminatan Matematika dan Ilmu-Ilmu Alam.Jakarta: Erlangga.\n" +
                         "•\tRumiyati, Purnamawati, H., Teo Sukoco. 2019. Biologi untuk SMA/MA Kelas X Peminatan Matematika dan Ilmu-Ilmu Alam. Klaten: Intan Pariwara. \n",
@@ -69,11 +70,11 @@ class Home : AppCompatActivity() {
         }
 
         petaKonsepButton.setOnClickListener {
-            startActivity(Intent(this,PetaKonsep::class.java))
+            startActivity(Intent(this, PetaKonsep::class.java))
         }
 
         glosariumButton.setOnClickListener {
-            startActivity(Intent(this,Glosarium::class.java))
+            startActivity(Intent(this, Glosarium::class.java))
         }
     }
 }

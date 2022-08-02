@@ -1,8 +1,8 @@
 package com.example.biologi.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.biologi.R
 import com.example.biologi.adapter.RecyclerviewGlosariumAdapter
@@ -14,7 +14,7 @@ import java.io.InputStream
 
 class Glosarium : AppCompatActivity() {
 
-    private lateinit var listView:ListView
+    private lateinit var listView: ListView
     private lateinit var data: ArrayList<GlosariumData>
 
 
@@ -22,16 +22,12 @@ class Glosarium : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_glosarium)
 
-        data=parseJSON()
-       val glosariumAdapter= RecyclerviewGlosariumAdapter(data)
+        data = parseJSON()
+        val glosariumAdapter = RecyclerviewGlosariumAdapter(data)
         recyclerViewAbjad.apply {
-            layoutManager=LinearLayoutManager(this@Glosarium)
-            adapter=glosariumAdapter
+            layoutManager = LinearLayoutManager(this@Glosarium)
+            adapter = glosariumAdapter
         }
-//        glosariumAdapter= GlosariumAdapter(this)
-//
-//        recyclerViewAbjad.adapter=glosariumAdapter
-//        glosariumAdapter.employees=data
     }
 
     private fun parseJSON(): ArrayList<GlosariumData> {
@@ -55,19 +51,19 @@ class Glosarium : AppCompatActivity() {
                 val abjad: String = jsonObj.getString("abjad")
                 val isi = jsonObj.getJSONArray("isi")
                 val child = arrayListOf<IsiData>()
-                    for (j in 0 until isi.length()){
-                        val jsonIsi = isi.getJSONObject(j)
-                        val istilah:String = jsonIsi.getString("istilah")
-                        val pengertian:String = jsonIsi.getString("pengertian")
-                        val dataChild = IsiData(
-                            istilah=istilah,
-                            pengertian=pengertian
-                        )
-                        child.add(dataChild)
+                for (j in 0 until isi.length()) {
+                    val jsonIsi = isi.getJSONObject(j)
+                    val istilah: String = jsonIsi.getString("istilah")
+                    val pengertian: String = jsonIsi.getString("pengertian")
+                    val dataChild = IsiData(
+                        istilah = istilah,
+                        pengertian = pengertian
+                    )
+                    child.add(dataChild)
                 }
                 val dataAbjad = GlosariumData(
-                    abjad=abjad,
-                    isi=child
+                    abjad = abjad,
+                    isi = child
                 )
                 employees.add(dataAbjad)
             }

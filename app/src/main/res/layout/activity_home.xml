@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:paddingBottom="16dp"
-    android:background="@color/white"
-    android:layout_height="match_parent"
     tools:context=".ui.PdfView">
 
     <androidx.constraintlayout.widget.Guideline
@@ -131,9 +131,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal|center_vertical"
-                android:textColor="@color/white"
                 android:text="materi"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -219,9 +219,9 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal|center_vertical"
                 android:lines="2"
-                android:textColor="@color/white"
                 android:text="daftar pustaka"
-                android:textAllCaps="true" />
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
