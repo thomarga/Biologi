@@ -1,0 +1,125 @@
+{
+  "data": [
+    {
+      "abjad": "E",
+      "isi": [
+        {
+          "istilah": "Ektoplasma",
+          "pengertian": "Lapisan luar protoplasma yang bersifat liat dan kaku yang terdapat pada sel tertentu"
+        },
+        {
+          "istilah": "Endoplasma ",
+          "pengertian": "bagian dalam sitoplasma"
+        }
+      ]
+    },
+    {
+      "abjad": "F",
+      "isi": [
+        {
+          "istilah": "Fagositosis",
+          "pengertian": "proses yang terjadi pada sebuah sel yang mengelilingi partikel-partikel dari sekitarnya dengan sitoplasmanya"
+        },
+        {
+          "istilah": "Fitoplankton",
+          "pengertian": "tumbuhan mikroskopis yang hidup melayang atau mengapung di air dan memiliki gerak yang terbatas"
+        },
+        {
+          "istilah": "Flagella",
+          "pengertian": "bulu cambuk terdapat pada dinding sel dan berfungsi sebagai alat gerak. Flagela hanya dimiliki oleh bakteri yang berbentuk batang, koma (vibrio), dan spiral."
+        }
+      ]
+    },
+    {
+      "abjad": "K",
+      "isi": [
+        {
+          "istilah": "Kariokinesis",
+          "pengertian": "proses pembagian materi inti yang terdiri dari beberapa fase, yaitu Profase, Metafase, dan Telofase"
+        }
+      ]
+    },
+    {
+      "abjad": "N",
+      "isi": [
+        {
+          "istilah": "Neuston",
+          "pengertian": "organisme yang hidup di permukaan laut atau muara, atau di permukaan danau, sungai atau kolam."
+        }
+      ]
+    },
+    {
+      "abjad": "O",
+      "isi": [
+        {
+          "istilah": "Oogami",
+          "pengertian": "gamet yang dimiliki oleh manusia dan hewan. "
+        },
+        {
+          "istilah": "Osmoregulasi",
+          "pengertian": "kemampuan organisme untuk mempertahankan keseimbangan kadar zat terlarut dalam tubuh dan dalam zat yang kadar garamnya berbeda"
+        }
+      ]
+    },
+    {
+      "abjad": "P",
+      "isi": [
+        {
+          "istilah": "Pelikel",
+          "pengertian": "membran tipis sebagai pelindung, seperti pada protozoa tertentu"
+        },
+        {
+          "istilah": "Plankton",
+          "pengertian": "organisme laut (tumbuhan dan hewan) yang sangat halus, kebanyakan mikroskopis, melayang di dalam air laut, dan merupakan makanan utama ikan"
+        },
+        {
+          "istilah": "Plasmodium",
+          "pengertian": "kelompok protoplasma berinti banyak yang timbul karena penggabungan beberapa ameba berinti satu"
+        },
+        {
+          "istilah": "Pseudopodia",
+          "pengertian": "alat gerak dalam tubuh bakteri yang berbentuk kaki semu atau kaki tidak sempurna yang berfungsi sebagai alat untuk memindahkan tubuh"
+        }
+      ]
+    },
+    {
+      "abjad": "S",
+      "isi": [
+        {
+          "istilah": "Singami",
+          "pengertian": "peleburan dua gamet yang dapat berupa nukleus atau sel-sel bernukleus untuk membentuk sel tunggal (zigot) atau peleburan nukleus."
+        },
+        {
+          "istilah": "Sitokinesis",
+          "pengertian": "pembelahan sitoplasma yang diikuti mitosis dan meiosis"
+        },
+        {
+          "istilah": "Sporangium",
+          "pengertian": "sel, struktur, atau organ yang membentuk spora di dalamnya; kotak spora"
+        },
+        {
+          "istilah": "Sporozoit",
+          "pengertian": "stadium infektif yang motil pada sporozoa tertentu yang merupakan hasil reproduksi seksual dan menimbulkan daur aseksual di dalam inang yang baru"
+        }
+      ]
+    },
+    {
+      "abjad": "T",
+      "isi": [
+        {
+          "istilah": "Tropozoit",
+          "pengertian": "bakteri atau protozoa, terutama dari kelas sporozoa, yang berada pada tahap aktif dalam siklus hidupnya."
+        }
+      ]
+    },
+    {
+      "abjad": "Z",
+      "isi": [
+        {
+          "istilah": "Zooplankton",
+          "pengertian": "binatang mengapung yang hanyut terbawa arus laut, umumnya berukuran mikroskopis (hanya beberapa milimeter), tetapi ada yang besar seperti ubur-ubur ekor panjang (50 cm)"
+        }
+      ]
+    }
+  ]
+}

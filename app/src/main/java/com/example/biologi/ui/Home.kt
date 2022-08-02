@@ -71,5 +71,9 @@ class Home : AppCompatActivity() {
         petaKonsepButton.setOnClickListener {
             startActivity(Intent(this,PetaKonsep::class.java))
         }
+
+        glosariumButton.setOnClickListener {
+            startActivity(Intent(this,Glosarium::class.java))
+        }
     }
 }

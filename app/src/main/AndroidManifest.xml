@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".ui.Glosarium"
+            android:exported="false" />
+        <activity
             android:name=".ui.Home"
             android:exported="false" />
         <activity
