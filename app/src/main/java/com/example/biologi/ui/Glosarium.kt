@@ -14,7 +14,6 @@ import java.io.InputStream
 
 class Glosarium : AppCompatActivity() {
 
-    private lateinit var listView: ListView
     private lateinit var data: ArrayList<GlosariumData>
 
 

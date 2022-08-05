@@ -3,8 +3,8 @@ package com.example.biologi.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View.INVISIBLE
-import android.view.View.VISIBLE
+import android.view.View.*
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.biologi.R
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener
@@ -44,14 +44,18 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
 
         when (intent.getStringExtra("protista").toString() == "protista_materi") {
             true -> {
-                fungiBtn.visibility = VISIBLE
-                ganggangBtn.visibility = VISIBLE
-                protozoaBtn.visibility = VISIBLE
+//                fungiBtn.visibility = VISIBLE
+//                ganggangBtn.visibility = VISIBLE
+//                protozoaBtn.visibility = VISIBLE
+                linearPdfView.visibility = VISIBLE
             }
             false -> {
-                fungiBtn.visibility = INVISIBLE
-                ganggangBtn.visibility = INVISIBLE
-                protozoaBtn.visibility = INVISIBLE
+                fungiBtn.visibility = GONE
+                ganggangBtn.visibility = GONE
+                protozoaBtn.visibility = GONE
+                peranBtn.visibility = GONE
+                val a = linearPdfView.layoutParams as RelativeLayout.LayoutParams
+                a.setMargins(0,0,0,0)
             }
         }
 
@@ -65,6 +69,10 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
 
         protozoaBtn.setOnClickListener {
             protozoa()
+        }
+
+        peranBtn.setOnClickListener {
+            kegunaan()
         }
     }
 
@@ -94,7 +102,7 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
     }
 
     private fun fungi() {
-        val materi = arrayListOf("myxomycota", "oomycota", "acrasiomycota")
+        val materi = arrayListOf("myxomycota", "oomycota", "acrasiomycot")
         val intent = Intent(this, Spin::class.java)
         intent.putExtra("materi", materi)
         startActivity(intent)
@@ -102,8 +110,8 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
 
     private fun ganggang() {
         val materi = arrayListOf(
-            "rhodophyta", "phaeophyta", "chrysophyta", "chlorophyta",
-            "bacillariophyta", "euglenophyta"
+            "rhodophyta", "phaeophyta", "chrysophyta", "chilorophyta",
+            "bacilliarophyta", "euglenophyta"
         )
         val intent = Intent(this, Spin::class.java)
         intent.putExtra("materi", materi)
@@ -111,9 +119,15 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
     }
 
     private fun protozoa() {
-        val materi = arrayListOf("rizopoda", "flagellata", "ciliata", "sporozoa")
+        val materi = arrayListOf("rhizopodha", "flagellata", "ciliata", "sporozoa")
         val intent = Intent(this, Spin::class.java)
         intent.putExtra("materi", materi)
+        startActivity(intent)
+    }
+
+    fun kegunaan() {
+        val intent = Intent(this, PdfView::class.java)
+        intent.putExtra("protista", "peran")
         startActivity(intent)
     }
 }

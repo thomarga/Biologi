@@ -45,28 +45,11 @@ class Home : AppCompatActivity() {
         }
 
         petunjukPenggunaanButton.setOnClickListener {
-            showSingleButtonWarningDialog(
-                title = " Petunjuk Penggunaan",
-                content = "Guna mempermudan teman-teman dalam mempelajari E-Modul Protista ini dan penggunaanya secara maksimal, alangkah baiknya teman teman memahami petunjuk penggunaan sebagai E-Modul ini terlebih dahulu \n" +
-                        "•\tPengguna e-modul dapat di akses secara mandiri dan dapat dimulai dari menu apa saja\n" +
-                        "•\tBacalah dengan teliti dan seksama pada materi yang akan dipelajari \n" +
-                        "•\tScroll ke bawah untuk melihat materi\n" +
-                        "•\tZoom In Zoom Out untuk meperbesar materi\n" +
-                        "•\tKlik materi (tulisan akan berputar) maka akan terbuka materi yang dipelajari\n" +
-                        "•\tPada modul ini telah disediakan evaluasi pembelajaran. Kerjakan secara mandiri dan dikerjakan di platfom yang sudah disediakan. \n" +
-                        "•\tJika menemukan kesulitan beritahukanlah pada guru kalian\n",
-                buttonText = "Kembali"
-            )
+          startActivity(Intent(this,PetunjukPenggunaan::class.java))
         }
 
         daftarPustakaButton.setOnClickListener {
-            showSingleButtonWarningDialog(
-                title = " Daftar Pustaka",
-                content = "•\tSiti, N., Devi, R., Rofida U. 2020. Biologi untuk SMA/MA Kelas X Peminatan Matematika dan Ilmu-Ilmu Alam. Klaten: Intan Pariwara.\n" +
-                        "•\tIrnaningtyas. 2013. Biologi untuk SMA/MA Kelas X Peminatan Matematika dan Ilmu-Ilmu Alam.Jakarta: Erlangga.\n" +
-                        "•\tRumiyati, Purnamawati, H., Teo Sukoco. 2019. Biologi untuk SMA/MA Kelas X Peminatan Matematika dan Ilmu-Ilmu Alam. Klaten: Intan Pariwara. \n",
-                buttonText = "Kembali"
-            )
+           startActivity(Intent(this,Dapus::class.java))
         }
 
         petaKonsepButton.setOnClickListener {
@@ -74,7 +57,9 @@ class Home : AppCompatActivity() {
         }
 
         glosariumButton.setOnClickListener {
-            startActivity(Intent(this, Glosarium::class.java))
+            val intent = Intent(this, PdfView::class.java)
+            intent.putExtra("protista", "glosarium")
+            startActivity(intent)
         }
     }
 }
