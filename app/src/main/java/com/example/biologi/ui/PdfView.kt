@@ -27,7 +27,7 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
 
         val intent = intent
         Log.e("materi", intent.getStringExtra("protista").toString())
-        includePdf.textViewToolbar.text = intent.getStringExtra("protista").toString()
+        includePdf.textViewToolbar.visibility = INVISIBLE
         pdfView.fromAsset("${intent.getStringExtra("protista")}.pdf")
             .defaultPage(pageNumber)
             .onPageChange(this)
@@ -38,22 +38,27 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
             .onPageError(this)
             .load()
 
-        button2.setOnClickListener {
-            spin()
-        }
 
-        when (intent.getStringExtra("protista").toString() == "protista_materi") {
-            true -> {
+        when (intent.getStringExtra("protista").toString()) {
+             "protista" -> {
 //                fungiBtn.visibility = VISIBLE
 //                ganggangBtn.visibility = VISIBLE
 //                protozoaBtn.visibility = VISIBLE
                 linearPdfView.visibility = VISIBLE
+                 lanjutViewButton.visibility = GONE
             }
-            false -> {
+            "pengantar fungi","pengantar hewan","pengantar tumbuhan" -> {
                 fungiBtn.visibility = GONE
                 ganggangBtn.visibility = GONE
                 protozoaBtn.visibility = GONE
                 peranBtn.visibility = GONE
+            }
+            else -> {
+                fungiBtn.visibility = GONE
+                ganggangBtn.visibility = GONE
+                protozoaBtn.visibility = GONE
+                peranBtn.visibility = GONE
+                lanjutViewButton.visibility = GONE
                 val a = linearPdfView.layoutParams as RelativeLayout.LayoutParams
                 a.setMargins(0,0,0,0)
             }
@@ -73,6 +78,10 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
 
         peranBtn.setOnClickListener {
             kegunaan()
+        }
+
+        lanjutViewButton.setOnClickListener {
+lanjutkan()
         }
     }
 
@@ -102,32 +111,45 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
     }
 
     private fun fungi() {
-        val materi = arrayListOf("myxomycota", "oomycota", "acrasiomycot")
-        val intent = Intent(this, Spin::class.java)
-        intent.putExtra("materi", materi)
+        val materi = "pengantar fungi"
+        val intent = Intent(this, PdfView::class.java)
+        intent.putExtra("protista", materi)
         startActivity(intent)
+        finish()
     }
 
     private fun ganggang() {
-        val materi = arrayListOf(
-            "rhodophyta", "phaeophyta", "chrysophyta", "chilorophyta",
-            "bacilliarophyta", "euglenophyta"
-        )
-        val intent = Intent(this, Spin::class.java)
-        intent.putExtra("materi", materi)
+        val materi = "pengantar tumbuhan"
+        val intent = Intent(this, PdfView::class.java)
+        intent.putExtra("protista", materi)
         startActivity(intent)
+        finish()
     }
 
     private fun protozoa() {
-        val materi = arrayListOf("rhizopodha", "flagellata", "ciliata", "sporozoa")
-        val intent = Intent(this, Spin::class.java)
-        intent.putExtra("materi", materi)
+        val materi = "pengantar hewan"
+        val intent = Intent(this, PdfView::class.java)
+        intent.putExtra("protista", materi)
         startActivity(intent)
+        finish()
     }
 
     fun kegunaan() {
         val intent = Intent(this, PdfView::class.java)
         intent.putExtra("protista", "peran")
+        startActivity(intent)
+        finish()
+    }
+
+    fun lanjutkan(){
+        var materi: ArrayList<String>? = null
+        when (intent.getStringExtra("protista").toString()){
+            "pengantar hewan" -> materi = arrayListOf("rhizopodha", "flagelata", "cilliata", "sporozoa")
+            "pengantar tumbuhan" -> materi = arrayListOf("rhodophyta", "phaeophyta", "chrysophyta", "chilorophyta","bacilliarophyta", "euglenophyta")
+            "pengantar fungi" -> materi = arrayListOf("myxomycota", "oomycota", "acrasiomycot")
+        }
+        val intent = Intent(this, Spin::class.java)
+        intent.putExtra("materi", materi)
         startActivity(intent)
     }
 }
