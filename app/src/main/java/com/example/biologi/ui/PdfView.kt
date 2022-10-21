@@ -24,10 +24,14 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pdf_view)
 
+        floatingActionButton2.setOnClickListener{
+            startActivity(Intent(this,WebViewActivity::class.java))
+        }
+
 
         val intent = intent
         Log.e("materi", intent.getStringExtra("protista").toString())
-        includePdf.textViewToolbar.visibility = INVISIBLE
+//        includePdf.textViewToolbar.visibility = INVISIBLE
         pdfView.fromAsset("${intent.getStringExtra("protista")}.pdf")
             .defaultPage(pageNumber)
             .onPageChange(this)
@@ -40,7 +44,7 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
 
 
         when (intent.getStringExtra("protista").toString()) {
-             "protista" -> {
+             "Protista" -> {
 //                fungiBtn.visibility = VISIBLE
 //                ganggangBtn.visibility = VISIBLE
 //                protozoaBtn.visibility = VISIBLE
@@ -144,9 +148,9 @@ lanjutkan()
     fun lanjutkan(){
         var materi: ArrayList<String>? = null
         when (intent.getStringExtra("protista").toString()){
-            "pengantar hewan" -> materi = arrayListOf("rhizopodha", "flagelata", "cilliata", "sporozoa")
-            "pengantar tumbuhan" -> materi = arrayListOf("rhodophyta", "phaeophyta", "chrysophyta", "chilorophyta","bacilliarophyta", "euglenophyta")
-            "pengantar fungi" -> materi = arrayListOf("myxomycota", "oomycota", "acrasiomycot")
+            "pengantar hewan" -> materi = arrayListOf("Rhizopodha", "Flagelata", "Cilliata", "Sporozoa")
+            "pengantar tumbuhan" -> materi = arrayListOf("Rhodophyta", "Phaeophyta", "Chrysophyta", "Chilorophyta","Bacilliarophyta", "Euglenophyta")
+            "pengantar fungi" -> materi = arrayListOf("Myxomycota", "Oomycota", "Acrasiomycot")
         }
         val intent = Intent(this, Spin::class.java)
         intent.putExtra("materi", materi)

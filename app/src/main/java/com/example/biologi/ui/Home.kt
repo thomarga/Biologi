@@ -13,31 +13,30 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
-        //send data protista yang berisi string protista.pdf ke activity lain sekaligus
-        // pindah activity
         materiButton.setOnClickListener {
             val intent = Intent(this, PdfView::class.java)
-            intent.putExtra("protista", "protista")
+            intent.putExtra("protista", "Protista")
             startActivity(intent)
         }
 
-        //direct ke browser dengan url yang sudah di inisiasi
         evaluasiPembelajaranButton.setOnClickListener {
             val browserIntent = Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://quizizz.com/join?gc=46221277")
+                Uri.parse("https://forms.gle/4apFEycdQq1aozfj9")
             )
             startActivity(browserIntent)
         }
 
         kompetensiDasarButton.setOnClickListener {
-            showSingleButtonWarningDialog(
-                title = "Kompetensi",
-                content = "3.6 Mengelompokkan protista berdasarkan ciri-ciri umum kelas dan mengaitkan peranannya dalam kehidupan \n" +
-                        "4.6 Menyajikan laporan hasil investigasi tentang berbagai peranan protista dalam kehidupan\n",
-                buttonText = "Kembali"
-            )
+            val intent = Intent(this, PdfView::class.java)
+            intent.putExtra("protista", "ki")
+            startActivity(intent)
+//            showSingleButtonWarningDialog(
+//                title = "Kompetensi",
+//                content = "3.6 Mengelompokkan protista berdasarkan ciri-ciri umum kelas dan mengaitkan peranannya dalam kehidupan \n" +
+//                        "4.6 Menyajikan laporan hasil investigasi tentang berbagai peranan protista dalam kehidupan\n",
+//                buttonText = "Kembali"
+//            )
         }
 
         profilPengembangButton.setOnClickListener {
