@@ -48,6 +48,7 @@ class PdfView : AppCompatActivity(), OnPageChangeListener, OnLoadCompleteListene
 //                fungiBtn.visibility = VISIBLE
 //                ganggangBtn.visibility = VISIBLE
 //                protozoaBtn.visibility = VISIBLE
+                 floatingActionButton2.visibility= VISIBLE
                 linearPdfView.visibility = VISIBLE
                  lanjutViewButton.visibility = GONE
             }
@@ -148,9 +149,9 @@ lanjutkan()
     fun lanjutkan(){
         var materi: ArrayList<String>? = null
         when (intent.getStringExtra("protista").toString()){
-            "pengantar hewan" -> materi = arrayListOf("Rhizopodha", "Flagelata", "Cilliata", "Sporozoa")
-            "pengantar tumbuhan" -> materi = arrayListOf("Rhodophyta", "Phaeophyta", "Chrysophyta", "Chilorophyta","Bacilliarophyta", "Euglenophyta")
-            "pengantar fungi" -> materi = arrayListOf("Myxomycota", "Oomycota", "Acrasiomycot")
+            "pengantar hewan" -> materi = arrayListOf("Rhizopoda", "Flagelata", "Ciliata", "Sporozoa")
+            "pengantar tumbuhan" -> materi = arrayListOf("Pyrropyta","Rhodophyta", "Phaephyta", "Chrysophyta", "Chlorophyta","Bacillariophyta", "Euglenophyta")
+            "pengantar fungi" -> materi = arrayListOf("Mycomycota", "Oomycota", "Acrasiomycota")
         }
         val intent = Intent(this, Spin::class.java)
         intent.putExtra("materi", materi)

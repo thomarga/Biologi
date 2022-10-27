@@ -26,8 +26,9 @@ class Spin : AppCompatActivity() {
             Color.parseColor("#FF6D74"),
             Color.parseColor("#61A8E8"),
             Color.parseColor("#4FDDC3"),
-            Color.parseColor("#61A8E8")
-        )
+            Color.parseColor("#61A8E8"),
+            Color.parseColor("#0c85f2"),
+            )
         val wheelItems: MutableList<WheelItem> = ArrayList()
 
         if (myList != null) {
